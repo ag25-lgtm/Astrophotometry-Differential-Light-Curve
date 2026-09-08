@@ -9,6 +9,7 @@ Takes magnitude measurements for a target (variable) star, a comparison star, an
 Converts differential magnitudes into relative flux using Pogson's relation
 Cleans and normalises the data (outlier removal, binning) using Lightkurve
 Plots relative flux against time (BJD_TDB) for both the target and check star, to confirm the comparison star is non-variable
+
 Tools used
 
 Python, pandas, Lightkurve, NumPy, Matplotlib

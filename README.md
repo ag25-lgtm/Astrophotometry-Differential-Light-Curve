@@ -18,3 +18,4 @@ Data
 
 HJD_bjd_tdb.csv: magnitude measurements for the target, comparison, and check stars, data extracted using ASTAP.
 
+<img width="2545" height="1200" alt="BJD_TDB" src="https://github.com/user-attachments/assets/33ebec40-5d38-4a1d-8c76-89ace30706c8" />

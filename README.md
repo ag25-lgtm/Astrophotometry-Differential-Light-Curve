@@ -1,5 +1,4 @@
 Astrophotometry Differential Light Curve
-[View the notebook and Plot](Astrophotometry_Differential_Light_Curve (2).ipynb)
 [View the notebook](Astrophotometry_Differential_Light_C....ipynb)
 
 A Python pipeline that turns raw photometry data from my own astrophotography into a differential light curve, as a self-directed project to build skills toward exoplanet transit detection.

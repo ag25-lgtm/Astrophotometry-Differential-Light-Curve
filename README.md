@@ -11,19 +11,13 @@ The analysis makes use of differential photometry, a technique in which the flux
 ## Data Aquisition
 The raw data for this experiment were collected from my garden. The astronomical seeing conditions are generally quite poor. Bortle 6, 2-3" of seeing and frequent interruption to imaging from passing clouds.
 
-Equipment used:
-
-Camera: ASI 294mc pro - dedicated cooled colour astrocamera
-
-Telescope: TS Optics Photoline 60mm F6 refractor telescope (with field flattener) - small doublet refractor
-
-Mount: SkyWatcher EQ5r pro - midsized equatorial GoTo mount
-
-Guiding: ZWO 30mm F4 guide scope + ZWO 120mm mini guide camera - small monochrome guiding setup
-
-Control System: ZWO asiair pro - dedicated astrophotography mini pc
-
-Accessories: USB dew heater, ZWO Electronic autofocuser
+Equipment used:\
+Camera: ASI 294mc pro - dedicated cooled colour astrocamera\
+Telescope: TS Optics Photoline 60mm F6 refractor telescope (with field flattener) - small doublet refractor\
+Mount: SkyWatcher EQ5r pro - midsized equatorial GoTo mount\
+Guiding: ZWO 30mm F4 guide scope + ZWO 120mm mini guide camera - small monochrome guiding setup\
+Control System: ZWO asiair pro - dedicated astrophotography mini pc\
+Accessories: USB dew heater, ZWO Electronic autofocuser\
 
 
 Tools used

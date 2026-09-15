@@ -28,7 +28,7 @@ The 60 exposure were loaded into ASTAP where they were first calibrated using da
 
 A .csv was then exported containing each star's calibrated magnitude and signal-to-noise ratio (SNR) at each timestamp (HJD) across the observing window.
 
-**NB:**HJD was converted to BJD_TDB using [this](https://arbiter.nextastro.org/toolkit/bjd-converter) online converter.
+**NB:** HJD was converted to BJD_TDB using [this](https://arbiter.nextastro.org/toolkit/bjd-converter) online converter.
 
 ### 
 

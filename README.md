@@ -53,7 +53,15 @@ Sigma Clipping was then applied using LightKurve's .remove_outliers() to exclude
 
 The relative fluxes of the variable and check star were then normalised using LightKurve's .normalize(). This was done primarily to make the plots of the variable and check star visually comparable on a common scale while leaving the relative signal and error unchanged.
 
-A constant shift was then applied tot he ralitive flux of teh check star to allow it to be displayed on the same chart as the variable star without points overlapping.
+A constant shift was then applied to the relative flux of the check star to allow it to be displayed on the same chart as the variable star without points overlapping.
+
+### 4. Uncertainty Estimation
+The uncertainty in the flux of the variable, comparison and check stars were calculated individually using the respective signal to noise ratio (SNR) values outputted by ASTAP, for each frame.
+
+SNR is related to fractional flux error by the following relation:
+
+$$\frac{1}{\mathrm{SNR}}=\sigma_F$$
+
 
 Tools used
 

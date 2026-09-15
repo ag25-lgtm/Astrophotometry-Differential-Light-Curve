@@ -64,7 +64,7 @@ $$\frac{1}{\mathrm{SNR}}=\frac{\sigma_F}{F}$$
 
 The errors in relative flux were than calculated by propagation the fractional error in the target and comparison stars, using the standard method for independent variables:
 
-$$\Delta_{rel}=\sqrt{(\frac{1}{\mathrm{SNR_tar}})^2+(\frac{1}{\mathrm{SNR_comp}})^2}$$
+$$\DeltaF_{rel}=\sqrt{{\frac({1}{\mathrm{SNR_tar}})}^2+{\frac({1}{\mathrm{SNR_comp}})}^2}$$
 
 
 Tools used

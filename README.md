@@ -49,9 +49,11 @@ $$\frac{F_v}{F_c} = 10^{-0.4(m_v - m_c)}$$\
 $$\frac{F_k}{F_c} = 10^{-0.4(m_k - m_c)}$$
 
 ### Data Cleaning and Normalisation
-Sigma Clipping was then applied using LightKurve's .removeoutliers to exclude data points more than $3\sigma$ from the mean. This was applied to both the variable and check star relative fluxes.
+Sigma Clipping was then applied using LightKurve's .remove_outliers() to exclude data points whose relative flux deviated more than $3\sigma$ from the median flux. This was applied to both the variable and check star.
 
+The relative fluxes of the variable and check star were then normalised using LightKurve's .normalize(). This was done primarily to make the plots of the variable and check star visually comparable on a common scale while leaving the relative signal and error unchanged.
 
+A constant shift was then applied tot he ralitive flux of teh check star to allow it to be displayed on the same chart as the variable star without points overlapping.
 
 Tools used
 

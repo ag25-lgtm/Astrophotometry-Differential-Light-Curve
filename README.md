@@ -56,16 +56,19 @@ The relative fluxes of the variable and check star were then normalised using Li
 A constant shift was then applied to the relative flux of the check star to allow it to be displayed on the same chart as the variable star without points overlapping.
 
 ### 4. Uncertainty Estimation
-The uncertainty in the flux of the variable, comparison and check stars were calculated individually using the respective signal to noise ratio (SNR) values outputted by ASTAP, for each frame.
+The uncertainty in the flux of the variable, comparison and check stars wwas calculated individually using the respective signal to noise ratio (SNR) values outputted by ASTAP, for each frame.
 
 SNR is related to fractional flux error by the following relation:
 
 $$\frac{1}{\mathrm{SNR}}=\frac{\sigma_F}{F}$$
 
-The errors in relative flux were than calculated by propagation the fractional error in the target and comparison stars, using the standard method for independent variables:
+The sigma clipping masks (v_mask and k_mask) were applied to the corresponding SNR values, with the comparison star's SNR masked using either v_mask or k_mask depending on whether it was being paired with the variable or check star. This ensured that SNR values from clipped data points were excluded from the error calculations.
 
-$$\Delta F_{rel} = \sqrt{\left(\frac{1}{\mathrm{SNR}_{tar}}\right)^2 + \left(\frac{1}{\mathrm{SNR}_{comp}}\right)^2}$$
+The fractional errors in relative flux were than calculated by propagating the fractional error in the target and comparison stars, using the standard method for independent variables:
 
+$$\frac{\delta F_{rel}}{F_{rel} = \sqrt{\left(\frac{1}{\mathrm{SNR}_{tar}}\right)^2 + \left(\frac{1}{\mathrm{SNR}_{comp}}\right)^2}$$
+
+This fractional error was then multiplied by the normalised relative flux to obtain the absolute uncertainty for each data point.
 
 Tools used
 

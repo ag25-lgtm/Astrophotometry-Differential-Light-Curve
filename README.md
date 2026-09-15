@@ -60,7 +60,7 @@ The uncertainty in the flux of the variable, comparison and check stars were cal
 
 SNR is related to fractional flux error by the following relation:
 
-$$\frac{1}{\mathrm{SNR}}=\sigma_F$$
+$$\frac{1}{\mathrm{SNR}}=frac{\sigma_F}{F}$$
 
 
 Tools used

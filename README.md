@@ -56,7 +56,7 @@ The relative fluxes of the variable and check star were then normalised using Li
 A constant shift was then applied to the relative flux of the check star to allow it to be displayed on the same chart as the variable star without points overlapping.
 
 ### 4. Uncertainty Estimation
-The uncertainty in the flux of the variable, comparison and check stars wwas calculated individually using the respective signal to noise ratio (SNR) values outputted by ASTAP, for each frame.
+The uncertainty in the flux of the variable, comparison and check stars was calculated individually using the respective signal to noise ratio (SNR) values outputted by ASTAP, for each frame.
 
 SNR is related to fractional flux error by the following relation:
 
@@ -69,6 +69,20 @@ The fractional errors in relative flux were than calculated by propagating the f
 $$\frac{\sigma_{F_{rel}}}{F_{rel}} = \sqrt{\left(\frac{1}{\mathrm{SNR}_{tar}}\right)^2 + \left(\frac{1}{\mathrm{SNR}_{comp}}\right)^2}$$
 
 This fractional error was then multiplied by the normalised relative flux to obtain the absolute uncertainty for each data point.
+
+### 5. Time Binning and Binned Uncertainty Estimation
+The data points were then split into bins of 0.004 days, containing ~5 points on average. The mean relative flux and time were then calculated for each bin.
+
+The uncertainty on the binned mean flux was calculated using the equation for the error on an equally weighted mean of independent measurements:
+
+$$\sigma_{\bar{F}} = \frac{\sqrt{\sum_{i=1}^{N} \sigma_{F_i}^2}}{N}$$
+
+where $\sigma_{\bar{F}}$ is the error on the mean flux for a given bin, $\sigma_{F_i}$ is the individual flux error of each measurement, and $N$ is the number of measurements in that bin. Since all frames were taken with fixed 60s exposures under similar observing conditions, the mean individual flux errors are expected to be fairly consistent within a bin, therefore an unweighted mean is reasonable. 
+
+**NB:** when errors are approximately equal, this simplifies to the familiar $$\sigma_{\bar{F}} \approx \frac{\sigma_F}{\sqrt{N}}$$
+
+
+
 
 Tools used
 

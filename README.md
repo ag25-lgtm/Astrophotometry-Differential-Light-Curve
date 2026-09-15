@@ -30,7 +30,7 @@ A .csv was then exported containing each star's calibrated magnitude and signal-
 
 **NB:** HJD was converted to BJD_TDB using [this](https://arbiter.nextastro.org/toolkit/bjd-converter) online converter.
 
-### Differential Photometry 
+### 2. Differential Photometry 
 **The differential magnitude of two stars is defined as follows:**
 
 Pogson's relation states:
@@ -48,7 +48,7 @@ The relations for flux of the variable (v) and check (k) stars relative to the c
 $$\frac{F_v}{F_c} = 10^{-0.4(m_v - m_c)}$$\
 $$\frac{F_k}{F_c} = 10^{-0.4(m_k - m_c)}$$
 
-### Data Cleaning and Normalisation
+### 3. Data Cleaning and Normalisation
 Sigma Clipping was then applied using LightKurve's .remove_outliers() to exclude data points whose relative flux deviated more than $3\sigma$ from the median flux. This was applied to both the variable and check star.
 
 The relative fluxes of the variable and check star were then normalised using LightKurve's .normalize(). This was done primarily to make the plots of the variable and check star visually comparable on a common scale while leaving the relative signal and error unchanged.

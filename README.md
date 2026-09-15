@@ -30,7 +30,8 @@ A .csv was then exported containing each star's calibrated magnitude and signal-
 
 **NB:** HJD was converted to BJD_TDB using [this](https://arbiter.nextastro.org/toolkit/bjd-converter) online converter.
 
-### 
+### Differential Photometry 
+The differential magnitude, /deltam/ 
 
 
 Tools used

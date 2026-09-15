@@ -66,7 +66,7 @@ The sigma clipping masks (v_mask and k_mask) were applied to the corresponding S
 
 The fractional errors in relative flux were than calculated by propagating the fractional error in the target and comparison stars, using the standard method for independent variables:
 
-$$\frac{\delta F_{rel}}{F_{rel}} = \sqrt{\left(\frac{1}{\mathrm{SNR}_{tar}}\right)^2 + \left(\frac{1}{\mathrm{SNR}_{comp}}\right)^2}$$
+$$\frac{\sigma F_{rel}}{F_{rel}} = \sqrt{\left(\frac{1}{\mathrm{SNR}_{tar}}\right)^2 + \left(\frac{1}{\mathrm{SNR}_{comp}}\right)^2}$$
 
 This fractional error was then multiplied by the normalised relative flux to obtain the absolute uncertainty for each data point.
 

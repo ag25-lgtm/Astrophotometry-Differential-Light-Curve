@@ -37,10 +37,10 @@ The differential magnitude of two star  is defined as follows as follows,
 
  Pogson's relation states:\
  $m_1 - m_2 = -2.5log_{10} * (F_1/F_2)$\
- where &F_1$ and $F_2$ are the flux of stars 1 and 2.
+ where $F_1$ and $F_2$ are the flux of stars 1 and 2.
 
  Therefore:\
- $F_1/F_2 = 10^{-0.4(m_1-m_2)}
+ $F_1/F_2 = 10^{-0.4(m_1-m_2)}$
 
 
 

@@ -89,7 +89,7 @@ To determine whether the variable star shows statistically significant variation
 
 $$\chi^2_\nu = \frac{1}{N-1}\sum_{i=1}^{N}\frac{(F_i - \bar{F})^2}{\sigma_{F_i}^2}$$
 
-where $F_i$ and $\sigma_{F_i}$ are the mean flux and error of each bin, $\bar{F}$ is the unweighted mean flux across all bins, and $N$ is the number of bins. A value of $\chi^2_\nu \approx 1$ indicates the scatter of binned points is consistent with the calculated error (noise floor). A $\chi^2_\nu \gg 1$ indicates variation which cannot be explained by noise alone.
+where $F_i$ and $\sigma_{F_i}$ are the mean flux and error of each bin, $\bar{F}$ is the unweighted mean flux across all bins and $N$ is the number of bins. A value of $\chi^2_\nu \approx 1$ indicates that the scatter of binned points is consistent with the calculated error (noise floor). A $\chi^2_\nu \gg 1$ indicates variation which cannot be explained by noise alone.
 
 The check star's $\chi^2_\nu$ result acts as a baseline. Since it is assumed to be non variable, its $\chi^2_\nu$ verifies the accuracy of the calculated errors. If its $\chi^2_\nu \approx 1$ then a larger $\chi^2_\nu$ of the variable star can be interpreted as truly significant stellar flux variation. 
 

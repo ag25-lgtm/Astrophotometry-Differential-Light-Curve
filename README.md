@@ -31,12 +31,16 @@ A .csv was then exported containing each star's calibrated magnitude and signal-
 **NB:** HJD was converted to BJD_TDB using [this](https://arbiter.nextastro.org/toolkit/bjd-converter) online converter.
 
 ### Differential Photometry 
-The differential magnitude of the variable and comparison star was defined as follows,
+The differential magnitude of two star  is defined as follows as follows,
 
- $\Delta m_{v-c} = m_{v} - m_{c}$
+ $\Delta m = m_{1} - m_{2}$
 
- Pogson's relation states:
- $m_1 - m_2 = -2.5log_{10} * (F_1/F_2)$
+ Pogson's relation states:\
+ $m_1 - m_2 = -2.5log_{10} * (F_1/F_2)$\
+ where &F_1$ and $F_2$ are the flux of stars 1 and 2.
+
+ Therefore:\
+ $F_1/F_2 = 10^{-0.4(m_1-m_2)}
 
 
 

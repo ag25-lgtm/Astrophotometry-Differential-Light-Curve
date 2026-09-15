@@ -36,7 +36,7 @@ The differential magnitude of the variable and comparison star was defined as fo
  $\Delta m_{v-c} = m_{v} - m_{c}$
 
  Pogson's relation states:
- $m_1 - m_2 = -2.5log_(10) * (F_1/F_2)$
+ $m_1 - m_2 = -2.5log_{10} * (F_1/F_2)$
 
 
 

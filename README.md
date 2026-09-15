@@ -31,7 +31,9 @@ A .csv was then exported containing each star's calibrated magnitude and signal-
 **NB:** HJD was converted to BJD_TDB using [this](https://arbiter.nextastro.org/toolkit/bjd-converter) online converter.
 
 ### Differential Photometry 
-The differential magnitude, $\Delta m$
+The differential magnitude of the variable and comparison star was defined as follows,\
+ $\Delta m{v-c}$ = $m{v} - $m{c)$
+
 
 
 Tools used

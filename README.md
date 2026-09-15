@@ -12,12 +12,12 @@ The analysis makes use of differential photometry, a technique in which the flux
 The raw data for this experiment were collected from my garden. The astronomical seeing conditions are generally quite poor. Bortle 6, 2-3" of seeing and frequent interruption to imaging from passing clouds.
 
 **Equipment used:**\
-Camera: ASI 294mc pro - dedicated cooled colour astrocamera\
-Telescope: TS Optics Photoline 60mm F6 refractor telescope (with field flattener) - small doublet refractor\
-Mount: SkyWatcher EQ5r pro - midsized equatorial GoTo mount\
-Guiding: ZWO 30mm F4 guide scope + ZWO 120mm mini guide camera - small monochrome guiding setup\
-Control System: ZWO asiair pro - dedicated astrophotography mini pc\
-Accessories: USB dew heater, ZWO Electronic autofocuser\
+**Camera:** ASI 294mc pro - dedicated cooled colour astrocamera\
+**Telescope:** TS Optics Photoline 60mm F6 refractor telescope (with field flattener) - small doublet refractor\
+**Mount:** SkyWatcher EQ5r pro - midsized equatorial GoTo mount\
+**Guiding:** ZWO 30mm F4 guide scope + ZWO 120mm mini guide camera - small monochrome guiding setup\
+**Control System:** ZWO asiair pro - dedicated astrophotography mini pc\
+**Accessories:** USB dew heater, ZWO Electronic autofocuser\
 
 The observing run spanned only ~1 hour of continuous data (60 x 60s exposures at gain 120, -10°C, with two additional gaps from passing clouds), while the target's suspected period is on the order of 1.5 days. This run spans only a few percent of one full cycle, so even if the star is truly varying, the amount of change visible within this short window could easily be smaller than our measurement uncertainties and therefore statistically indistinguishable from noise. Combined with sub-optimal seeing conditions and measurement uncertainties set by amateur equipment it is rather unlikely that a significant detection in stellar flux variation will be measured. **However**, that is merely a guess, not a calculated result. Until the data is analysed we can be optimistically, if not naively, hopeful.    
 

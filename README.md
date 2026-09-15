@@ -32,7 +32,7 @@ A .csv was then exported containing each star's calibrated magnitude and signal-
 
 ### Differential Photometry 
 The differential magnitude of the variable and comparison star was defined as follows,\
- $\Delta m{v-c}$ = $m{v} - $m{c)$
+ $\Delta m{v-c}$ = $\m_{v} - $\m_{c)$
 
 
 

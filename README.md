@@ -49,7 +49,7 @@ $$\frac{F_v}{F_c} = 10^{-0.4(m_v - m_c)}$$\
 $$\frac{F_k}{F_c} = 10^{-0.4(m_k - m_c)}$$
 
 ### Data Cleaning and Normalisation
-Sigma Clipping was then applied using LightKurve's .removeoutliers to exclude data points more than $3\Sigma$ from the mean. This was applied to both the variable and check star relative fluxes.
+Sigma Clipping was then applied using LightKurve's .removeoutliers to exclude data points more than $3\sigma$ from the mean. This was applied to both the variable and check star relative fluxes.
 
 
 

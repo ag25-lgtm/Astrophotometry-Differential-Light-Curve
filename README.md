@@ -43,6 +43,11 @@ Therefore:
 
 $$\frac{F_1}{F_2} = 10^{-0.4(m_1 - m_2)}$$
 
+The relations for flux relative to the comparision star (c) of the variable (v) and check (k) stars are therefore given by:
+
+$$\frac{F_v}{F_c} = 10^{-0.4(m_v - m_c)}$$\
+$$\frac{F_k}{F_c} = 10^{-0.4(m_k - m_c)}$$
+
 
 
 

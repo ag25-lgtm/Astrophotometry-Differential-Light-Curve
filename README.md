@@ -81,6 +81,8 @@ where $\sigma_{\bar{F}}$ is the error on the mean flux for a given bin, $\sigma_
 
 **NB:** when errors are approximately equal, this simplifies to the familiar $$\sigma_{\bar{F}} \approx \frac{\sigma_F}{\sqrt{N}}$$
 
+Any bins with less than 3 data points were then removed using a filter.
+
 ### 6. Statistical Analysis
 **Reduced Chi-Squared and p Test**
 
@@ -97,6 +99,21 @@ If the check star $\chi^2_\nu$ is significantly larger than 1 this indicates tha
 
 The p-value was then calculated using scipy.stats to determine the probability of obtaining a chi-squared value at least as large as that observed for both the variable and check stars.
 
+Since the check star's reduced chi-squared did in fact significantly exceeded 1 (see Results), and the check star is known to be non variable from the Gaia catalogue, the formal SNR-derived flux errors were judged to underestimate the true point-to-point noise. A possible physical explanation of this is that reported SNR accounts for photon, sky, and read noise, but not scintillation (rapid flux fluctuations from atmospheric turbulence) which are expected to be non-negligible here given the modest 60 mm aperture and the target's low maximum altitude. While differential photometry partially cancels scintillation (since target and comparison stars share the same frames and similar sky positions) this cancellation is unlikely to be complete, leaving an additional, unaccounted contribution to flux errors. As these systematics are common for a single frame they should impact every star on the given frame in comparable proportion. The non-variable check star was hence used as an empirical calibrator: its excess scatter (above the calcualted errors) was translated into a single correction factor, which was then applied multiplicatively to the SNR based errors of both stars.
+
+$$\sigma_{F_i}^{\text{scaled}} = \sigma_{F_i} \times \sqrt{\chi^2_{\nu,\text{check}}}$$
+
+By construction, this forces $\chi^2_{\nu,\text{check,scaled}} = 1$. The reduced chi-squared and p-value tests were then repeated for both stars using the rescaled errors.
+
+
+
+
+
+## Results and Discussion
+<img width="2545" height="1200" alt="Normalised Relative Flux vs Time" src="https://github.com/user-attachments/assets/7d09d8a2-ca17-4a8a-a726-96a6a970728b" />
+
+
+
 
 
 
@@ -110,4 +127,3 @@ Data
 
 HJD_bjd_tdb.csv: magnitude measurements for the target, comparison, and check stars, data extracted using ASTAP.
 
-<img width="2545" height="1200" alt="BJD_TDB" src="https://github.com/user-attachments/assets/33ebec40-5d38-4a1d-8c76-89ace30706c8" />

@@ -127,6 +127,8 @@ The formal errors alone suggest that both stars vary significantly, which is con
 
 Despite the apparent underestimate of error, the SNR-based uncertainty propagation remains essential to this analysis, as it provides the baseline against which the check star's excess scatter, and therefore the rescaling factor, is calculated (under the assumption that the check star is non-variable).
 
+An alternative approach would be to compare the variable star's raw scatter directly to the check star's, rather than rescaling formal errors. This was avoided as it assumes both stars share the same noise level, ignoring that their differing brightness's give them different photon noise floors i.e brighter stars have lower fraction uncertainties (as reflected in their individual SNR values). It also provides only a single, blended scatter value for the entire run, rather than an individual uncertainty for each point or bin, meaning it cannot supply the per-bin weighting the chi-squared test requires to compute a formal significance value.
+
 **Outlier Removal**
 
 A 3σ clip was applied independently to each star's light curve. The variable star had 2 points removed (indices `[0, 1]`, corresponding to the first two exposures of the run, this is likely due to telescope/guiding settling rather than genuine signal or noise. The check star had no points removed (`[]`).

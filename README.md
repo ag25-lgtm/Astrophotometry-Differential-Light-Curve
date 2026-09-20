@@ -125,6 +125,8 @@ By construction, this forces $\chi^2_{\nu,\text{check,scaled}} = 1$. The reduced
 
 The formal errors alone suggest that both stars vary significantly, which is contradictory for the check star, as it should be constant. This contradiction (formal $\chi^2_\nu = 3.20$, $p = 4.07\times10^{-4}$, for a star assumed non-variable) indicates that the errors were underestimated, rather than the check star being truly variable. The rescaling, discussed in section 6 of methods, brings the check star to $\chi^2_\nu \approx 1$ ($p = 0.44$), confirming it is now consistent with the constant flux assumption. The variable star's significance drops substantially under this correction but remains well above the noise floor ($\chi^2_\nu = 3.52$, $p = 2.26\times10^{-4}$), indicating that the observed flux variation **IS** significant.
 
+Despite the apparent underestimate of error, the SNR-based uncertainty propagation remains essential to this analysis, as it provides the baseline against which the check star's excess scatter, and therefore the rescaling factor, is calculated (under the assumption that the check star is non-variable).
+
 **Outlier Removal**
 
 A 3σ clip was applied independently to each star's light curve. The variable star had 2 points removed (indices `[0, 1]`, corresponding to the first two exposures of the run, this is likely due to telescope/guiding settling rather than genuine signal or noise. The check star had no points removed (`[]`).

@@ -82,7 +82,7 @@ where $\sigma_{\bar{F}}$ is the error on the mean flux for a given bin, $\sigma_
 **NB:** when errors are approximately equal, this simplifies to the familiar $$\sigma_{\bar{F}} \approx \frac{\sigma_F}{\sqrt{N}}$$
 
 ### 6. Statistical Analysis
-**Reduced Chi-Squared Test**
+**Reduced Chi-Squared and p Test**
 
 To determine whether the variable star shows statistically significant variation, a reduced chi-squared
 ($\chi^2_\nu$) test was carried out on the variable star's binned light curve. The results were compared to that of the non-variable check star.
@@ -94,6 +94,8 @@ where $F_i$ and $\sigma_{F_i}$ are the mean flux and error of each bin, $\bar{F}
 The check star's $\chi^2_\nu$ result acts as a baseline. Since it is assumed to be non variable, its $\chi^2_\nu$ verifies the accuracy of the calculated errors. If its $\chi^2_\nu \approx 1$ then a larger $\chi^2_\nu$ of the variable star can be interpreted as truly significant stellar flux variation. 
 
 If the check star $\chi^2_\nu$ is significantly larger than 1 this indicates that the errors have been underestimated, or that the check/comparison star is not truly non-variable. In this situation an elevated $\chi^2_\nu$ of the variable star cannot be definitively interpreted as significant stellar flux variation.  
+
+The p-value was then calculated using scipy.stats to determine the probability of obtaining a chi-squared value at least as large as that observed for both the variable and check stars.
 
 
 

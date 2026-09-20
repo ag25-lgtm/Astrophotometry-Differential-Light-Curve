@@ -4,7 +4,7 @@
 ## Overview
 The chosen object for observation was the variable star V1045 Ori in the constellation of Orion, it has a a period of variability of ~1.5 days.
 
-The aim of this project was primarily to develop a python pipeline which could automatically plot a differential light curve and, using appropriate error and statistical analysis, determine the significance of an perceived stellar flux variation. 
+The aim of this project was primarily to develop a python pipeline which could automatically plot a differential light curve and, using appropriate error and statistical analysis, determine the significance of a perceived stellar flux variation. 
 
 The analysis makes use of differential photometry, a technique in which the flux of a target (variable) star is compared to that if a nearby (non-variable) comparison star. This acts to mitigate, as far as possible, external variables such as sky brightness, light cloud cover etc. The flux of a third (non-variable) check star is also measured over the same window of time and its flux compared to the comparison star. If both the check and comparison star are truly non-variable the differential light curve for the check star should be ~flat within calculated uncertainties.
 
@@ -24,7 +24,7 @@ The observing run spanned only ~1 hour of total observation time (60 x 60s expos
 ## Method
 
 ### 1. Photometry 
-The 60 exposure were loaded into ASTAP where they were first calibrated using darks (to remove thermal noise/hot pixels) and flats (to correct for uneven sensor illumination and remove dusk motes). The green channel was then extracted from the Bayer-matrix colour data, as it carries the highest sensitivity and best approximates the standard V photometric band. ASTAP then platesolved each frame (matching the pattern of detected stars against the Gaia catalogue to determine each frames pixel to sky coordinate mapping), which allows a given star to be found across all 60 frames. ASTAP's photometry tool then converted the reference star's raw magnitude into standard Johnson-V magnitudes, using Gaia's colour based transformation. This calibrated value then served as a reference for converting the raw magnitudes for all three stars into standard V magnitudes.
+The 60 exposures were loaded into ASTAP where they were first calibrated using darks (to remove thermal noise/hot pixels) and flats (to correct for uneven sensor illumination and remove dusk motes). The green channel was then extracted from the Bayer-matrix colour data, as it carries the highest sensitivity and best approximates the standard V photometric band. ASTAP then platesolved each frame (matching the pattern of detected stars against the Gaia catalogue to determine each frames pixel to sky coordinate mapping), which allows a given star to be found across all 60 frames. ASTAP's photometry tool then converted the reference star's raw magnitude into standard Johnson-V magnitudes, using Gaia's colour based transformation. This calibrated value then served as a reference for converting the raw magnitudes for all three stars into standard V magnitudes.
 
 A .csv was then exported containing each star's calibrated magnitude and signal-to-noise ratio (SNR) at each timestamp (HJD) across the observing window.
 
@@ -64,7 +64,7 @@ $$\frac{1}{\mathrm{SNR}}=\frac{\sigma_F}{F}$$
 
 The sigma clipping masks (v_mask and k_mask) were applied to the corresponding SNR values, with the comparison star's SNR masked using either v_mask or k_mask depending on whether it was being paired with the variable or check star. This ensured that SNR values from clipped data points were excluded from the error calculations.
 
-The fractional errors in relative flux were than calculated by propagating the fractional error in the target and comparison stars, using the standard method for independent variables:
+The fractional errors in relative flux were then calculated by propagating the fractional error in the target and comparison stars, using the standard method for independent variables:
 
 $$\frac{\sigma_{F_{rel}}}{F_{rel}} = \sqrt{\left(\frac{1}{\mathrm{SNR}_{tar}}\right)^2 + \left(\frac{1}{\mathrm{SNR}_{comp}}\right)^2}$$
 
@@ -91,9 +91,9 @@ To determine whether the variable star shows statistically significant variation
 
 $$\chi^2_\nu = \frac{1}{N-1}\sum_{i=1}^{N}\frac{(F_i - \bar{F})^2}{\sigma_{F_i}^2}$$
 
-where $F_i$ and $\sigma_{F_i}$ are the mean flux and error of each bin, $\bar{F}$ is the unweighted mean flux across all bins and $N$ is the number of bins. A value of $\chi^2_\nu \approx 1$ indicates that the scatter of binned points is consistent with the calculated error (noise floor). A $\chi^2_\nu \gg 1$ indicates variation which cannot be explained by noise alone.
+where $F_i$ and $\sigma_{F_i}$ are the mean flux and error of each bin, $\bar{F}$ is the unweighted mean flux across all bins and $N$ is the number of bins. A value of $\chi^2_\nu \approx 1$ indicates that the scatter of binned points is broadly consistent with the calculated uncertianties (noise floor). A $\chi^2_\nu \gg 1$ indicates variation which cannot be explained by noise alone.
 
-The check star's $\chi^2_\nu$ result acts as a baseline. Since it is assumed to be non variable, its $\chi^2_\nu$ verifies the accuracy of the calculated errors. If its $\chi^2_\nu \approx 1$ then a larger $\chi^2_\nu$ of the variable star can be interpreted as truly significant stellar flux variation. 
+The check star's $\chi^2_\nu$ result acts as a baseline. Since it is assumed to be non variable, its $\chi^2_\nu$ provides a check of the adequacy of the calculated errors. If its $\chi^2_\nu \approx 1$ then a larger $\chi^2_\nu$ of the variable star can be interpreted as truly significant stellar flux variation. 
 
 If the check star $\chi^2_\nu$ is significantly larger than 1 this indicates that the errors have been underestimated, or that the check/comparison star is not truly non-variable. In this situation an elevated $\chi^2_\nu$ of the variable star cannot be definitively interpreted as significant stellar flux variation.  
 
@@ -125,7 +125,7 @@ By construction, this forces $\chi^2_{\nu,\text{check,scaled}} = 1$. The reduced
 | Variable Star | 11.25 | $8.87\times10^{-18}$ | 3.52 | $2.26\times10^{-4}$ |
 | Check Star | 3.20 | $4.07\times10^{-4}$ | 1.00 | 0.44 |
 
-The formal errors alone suggest that both stars vary significantly, which is contradictory for the check star, as it should be constant. This contradiction (formal $\chi^2_\nu = 3.20$, $p = 4.07\times10^{-4}$, for a star assumed non-variable) indicates that the errors were underestimated, rather than the check star being truly variable. The rescaling, discussed in section 6 of methods, brings the check star to $\chi^2_\nu \approx 1$ ($p = 0.44$), confirming it is now consistent with the constant flux assumption. The variable star's significance drops substantially under this correction but remains well above the noise floor ($\chi^2_\nu = 3.52$, $p = 2.26\times10^{-4}$), indicating that the observed flux variation **IS** significant.
+The formal errors alone suggest that both stars vary significantly, which is contradictory for the check star, as it should be constant. This contradiction (formal $\chi^2_\nu = 3.20$, $p = 4.07\times10^{-4}$, for a star assumed non-variable) indicates that the errors were underestimated, rather than the check star being truly variable. The rescaling, discussed in section 6 of methods, brings the check star to $\chi^2_\nu \approx 1$ ($p = 0.44$), making it statistically consistent with the constant flux assumption. The variable star's significance drops substantially under this correction but remains well above the noise floor ($\chi^2_\nu = 3.52$, $p = 2.26\times10^{-4}$), indicating that the observed flux variation remains statistically consistent under this assumption.
 
 Despite the apparent underestimate of error, the SNR-based uncertainty propagation remains essential to this analysis, as it provides the baseline against which the check star's excess scatter, and therefore the rescaling factor, is calculated (under the assumption that the check star is non-variable).
 

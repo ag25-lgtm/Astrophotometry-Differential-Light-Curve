@@ -114,10 +114,29 @@ By construction, this forces $\chi^2_{\nu,\text{check,scaled}} = 1$. The reduced
 ## Results and Discussion
 <img width="2545" height="1200" alt="Normalised Relative Flux vs Time" src="https://github.com/user-attachments/assets/7d09d8a2-ca17-4a8a-a726-96a6a970728b" />
 
+
 | | Formal Errors: $\chi^2_\nu$ | Formal Errors: $p$-value | Rescaled Errors: $\chi^2_\nu$ | Rescaled Errors: $p$-value |
 |---|---|---|---|---|
 | Variable Star | 11.25 | $8.87\times10^{-18}$ | 3.52 | $2.26\times10^{-4}$ |
 | Check Star | 3.20 | $4.07\times10^{-4}$ | 1.00 | 0.44 |
+
+**Outlier Removal**
+
+A 3σ clip was applied independently to each star's light curve. The variable star had 2 points removed (indices `[0, 1]`, corresponding to the first two exposures of the run — consistent with early telescope/guiding settling rather than a genuine noise or signal feature); the check star had no points removed (`[]`).
+
+| | Points Clipped | Indices |
+|---|---|---|
+| Variable Star | 2 / 60 | `[0, 1]` |
+| Check Star | 0 / 60 | `[]` |
+
+**Bin Filtering**
+
+Bins containing fewer than 3 data points were discarded to avoid unreliable mean/error estimates from very small samples.
+
+| | Bins Kept | Threshold |
+|---|---|---|
+| Variable Star | 10 / 12 | ≥3 pts/bin |
+| Check Star | 11 / 13 | ≥3 pts/bin |
 
 
 

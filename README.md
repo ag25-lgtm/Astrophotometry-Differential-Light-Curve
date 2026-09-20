@@ -112,7 +112,9 @@ By construction, this forces $\chi^2_{\nu,\text{check,scaled}} = 1$. The reduced
 
 
 ## Results and Discussion
-<img width="2545" height="1200" alt="Normalised Relative Flux vs Time" src="https://github.com/user-attachments/assets/7d09d8a2-ca17-4a8a-a726-96a6a970728b" />
+**Differential Light Curve with Scaled Error Bars**
+<img width="2545" height="1200" alt="Normalised Relative Flux vs Time" src="https://github.com/user-attachments/assets/5df6fdba-ed43-48cd-aede-7870d8173c38" />
+
 
 
 | | Formal Errors: $\chi^2_\nu$ | Formal Errors: $p$-value | Rescaled Errors: $\chi^2_\nu$ | Rescaled Errors: $p$-value |

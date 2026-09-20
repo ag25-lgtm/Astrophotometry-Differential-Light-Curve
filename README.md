@@ -114,6 +114,21 @@ By construction, this forces $\chi^2_{\nu,\text{check,scaled}} = 1$. The reduced
 ## Results and Discussion
 <img width="2545" height="1200" alt="Normalised Relative Flux vs Time" src="https://github.com/user-attachments/assets/7d09d8a2-ca17-4a8a-a726-96a6a970728b" />
 
+\begin{table}[h]
+\centering
+\begin{tabular}{lcccc}
+\hline
+ & \multicolumn{2}{c}{Formal Errors} & \multicolumn{2}{c}{Rescaled Errors} \\
+ & $\chi^2_\nu$ & $p$-value & $\chi^2_\nu$ & $p$-value \\
+\hline
+Variable Star & 11.25 & $8.87\times10^{-18}$ & 3.52 & $2.26\times10^{-4}$ \\
+Check Star    & 3.20  & $4.07\times10^{-4}$  & 1.00 & 0.44 \\
+\hline
+\end{tabular}
+\caption{Reduced chi-squared and $p$-values for the variable and check stars, before and after error rescaling using the check star's $\chi^2_\nu$.}
+\label{tab:chi2_results}
+\end{table}
+
 
 
 

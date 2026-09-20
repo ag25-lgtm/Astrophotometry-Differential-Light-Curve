@@ -8,7 +8,7 @@ The aim of this project was primarily to develop a python pipeline which could a
 
 The analysis makes use of differential photometry, a technique in which the flux of a target (variable) star is compared to that if a nearby (non-variable) comparison star. This acts to mitigate, as far as possible, external variables such as sky brightness, light cloud cover etc. The flux of a third (non-variable) check star is also measured over the same window of time and its flux compared to the comparison star. If both the check and comparison star are truly non-variable the differential light curve for the check star should be ~flat within calculated uncertainties.
 
-## Data Aquisition
+## Data Acquisition
 The raw data for this experiment were collected from my garden. The astronomical seeing conditions are generally quite poor. Bortle 6, 2-3" of seeing and frequent interruption to imaging from passing clouds.
 
 **Equipment used:**\
@@ -19,7 +19,7 @@ The raw data for this experiment were collected from my garden. The astronomical
 **Control System:** ZWO asiair pro - dedicated astrophotography mini pc\
 **Accessories:** USB dew heater, ZWO Electronic autofocuser\
 
-The observing run spanned only ~1 hour of continuous data (60 x 60s exposures at gain 120, -10°C, with two additional gaps from passing clouds), while the target's suspected period is on the order of 1.5 days. This run spans only a few percent of one full cycle, so even if the star is truly varying, the amount of change visible within this short window could easily be smaller than our measurement uncertainties and therefore statistically indistinguishable from noise. Combined with sub-optimal seeing conditions and measurement uncertainties set by amateur equipment it is rather unlikely that a significant detection in stellar flux variation will be measured. **However**, that is merely a guess, not a calculated result. Until the data is analysed we can be optimistically hopeful.    
+The observing run spanned only ~1 hour of total observation time (60 x 60s exposures at gain 120, -10°C, with two additional gaps from passing clouds), while the target's suspected period is on the order of 1.5 days. This run spans only a few percent of one full cycle, so even if the star is truly varying, the amount of change visible within this short window could easily be smaller than our measurement uncertainties and therefore statistically indistinguishable from noise. Combined with sub-optimal seeing conditions and measurement uncertainties set by amateur equipment it is rather unlikely that a significant detection in stellar flux variation will be measured. **However**, that is merely a guess, not a calculated result. Until the data is analysed we can be optimistically hopeful.    
 
 ## Method
 
@@ -99,7 +99,9 @@ If the check star $\chi^2_\nu$ is significantly larger than 1 this indicates tha
 
 The p-value was then calculated using scipy.stats to determine the probability of obtaining a chi-squared value at least as large as that observed for both the variable and check stars.
 
-Since the check star's reduced chi-squared did in fact significantly exceeded 1 (see Results), and the check star is known to be non variable from the Gaia catalogue, the formal SNR-derived flux errors were judged to underestimate the true point-to-point noise. A possible physical explanation of this is that reported SNR accounts for photon, sky, and read noise, but not scintillation (rapid flux fluctuations from atmospheric turbulence) which are expected to be non-negligible here given the modest 60 mm aperture and the target's low maximum altitude. While differential photometry partially cancels scintillation (since target and comparison stars share the same frames and similar sky positions) this cancellation is unlikely to be complete, leaving an additional, unaccounted contribution to flux errors. As these systematics are common for a single frame they should impact every star on the given frame in comparably. The non-variable check star was hence used as an empirical calibrator: its excess scatter (above the calcualted errors) was translated into a single correction factor, which was then applied multiplicatively to the SNR based errors of both stars.
+Since the check star's reduced chi-squared did in fact significantly exceeded 1 (see Results), and the check and comparison stars were both selected using ASTAP's variable star annotation tool (which cross-references the Gaia catalogue), neither being flagged as a known variable, the formal SNR-derived flux errors were judged to underestimate the true point-to-point noise. A possible physical explanation of this is that reported SNR accounts for photon, sky, and read noise, but not scintillation (rapid flux fluctuations from atmospheric turbulence) which are expected to be non-negligible here given the modest 60 mm aperture and the target's low maximum altitude. While differential photometry partially cancels scintillation (since target and comparison stars share the same frames and similar sky positions) this cancellation is unlikely to be complete, leaving an additional, unaccounted contribution to flux errors. As these systematics are common for a single frame they should impact every star on the given frame comparably. The non-variable check star was hence used as an empirical calibrator: its excess scatter (above the calculated errors) was translated into a single correction factor, which was then applied multiplicatively to the SNR based errors of both stars.
+
+This entire correction rests on the assumption that the check star is genuinely non-variable. This is supported, but not conclusively proven by, the ASTAP/Gaia annotation check.
 
 Since $\chi^2_\nu \propto 1/\sigma_F^2$, an error that has been underestimated by a factor of $k$ produces a reduced chi-squared inflated by a factor of $k^2$; the correction factor was therefore taken as the square root of the check star's reduced chi-squared:
 
@@ -127,11 +129,14 @@ The formal errors alone suggest that both stars vary significantly, which is con
 
 Despite the apparent underestimate of error, the SNR-based uncertainty propagation remains essential to this analysis, as it provides the baseline against which the check star's excess scatter, and therefore the rescaling factor, is calculated (under the assumption that the check star is non-variable).
 
-An alternative approach would be to compare the variable star's raw scatter directly to the check star's, rather than rescaling formal errors. This was avoided as it assumes both stars share the same noise level, ignoring that their differing brightness's give them different photon noise floors i.e brighter stars have lower fraction uncertainties (as reflected in their individual SNR values). It also provides only a single, blended scatter value for the entire run, rather than an individual uncertainty for each point or bin, meaning it cannot supply the per-bin weighting the chi-squared test requires to compute a formal significance value.
+An alternative approach would be to compare the variable star's raw scatter directly to the check star's, rather than rescaling formal errors. This was avoided as it assumes both stars share the same noise level, ignoring that their differing brightnesses give them different photon noise floors i.e brighter stars have lower fractional uncertainties (as reflected in their individual SNR values). It also provides only a single, blended scatter value for the entire run, rather than an individual uncertainty for each point or bin, meaning it cannot supply the per-bin weighting the chi-squared test requires to compute a formal significance value.
+
+**Note About Technique**
+It is also worth noting that this analysis assumes the comparison star itself is non-variable, since all differential magnitudes (and therefore the check star's baseline) are measured relative to it. There remains a small possibility that the comparison and/or check star are each variable by some small, differing amount. If the check star has intrinsic variability, some of its excess scatter would not be attributed to underestimated measurement errors. The rescaling would therefore overestimate the required uncertainty correction, meaning the true errors may be smaller than the rescaled values and the significance of the variable star correspondingly greater. The corrected results should therefore be interpreted as conservative estimates, conditional on the assumption that the check star is non-variable.
 
 **Outlier Removal**
 
-A 3σ clip was applied independently to each star's light curve. The variable star had 2 points removed (indices `[0, 1]`, corresponding to the first two exposures of the run, this is likely due to telescope/guiding settling rather than genuine signal or noise. The check star had no points removed (`[]`).
+A 3σ clip was applied independently to each star's light curve. The variable star had 2 points removed indices `[0, 1]`, corresponding to the first two exposures of the run, this is likely due to telescope/guiding settling rather than genuine signal or noise. The check star had no points removed (`[]`).
 
 | | Points Clipped | Indices |
 |---|---|---|
@@ -147,18 +152,11 @@ Bins containing fewer than 3 data points were discarded to avoid unreliable mean
 | Variable Star | 10 / 12 | ≥3 pts/bin |
 | Check Star | 11 / 13 | ≥3 pts/bin |
 
-
-
-
-
-
-
-
-Tools used
+**Tools used**
 
 Python, pandas, Lightkurve, NumPy, Matplotlib
 
-Data
+**Data**
+HJD_bjd_tdb_new2.csv
 
-HJD_bjd_tdb.csv: magnitude measurements for the target, comparison, and check stars, data extracted using ASTAP.
 

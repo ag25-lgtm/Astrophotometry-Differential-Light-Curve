@@ -77,7 +77,7 @@ The uncertainty on the binned mean flux was calculated using the equation for th
 
 $$\sigma_{\bar{F}} = \frac{\sqrt{\sum_{i=1}^{N} \sigma_{F_i}^2}}{N}$$
 
-where $\sigma_{\bar{F}}$ is the error on the mean flux for a given bin, $\sigma_{F_i}$ is the individual flux error of each measurement, and $N$ is the number of measurements in that bin. Since all frames were taken with fixed 60s exposures under similar observing conditions, the mean individual flux errors are expected to be fairly consistent within a bin, therefore an unweighted mean is reasonable. 
+where $\sigma_{\bar{F}}$ is the error on the mean flux for a given bin, $\sigma_{F_i}$ is the individual flux error of each measurement, and $N$ is the number of measurements in that bin. Since all frames were taken with fixed 60 s exposures under similar observing conditions, the individual flux errors within each bin were generally of similar magnitude. For the variable star, these ranged from \(0.0023\) to \(0.0037\), while for the check star they ranged from \(0.0030\) to \(0.0044\). An unweighted mean was therefore used to calculate the binned flux values.
 
 **NB:** when errors are approximately equal, this simplifies to the familiar $$\sigma_{\bar{F}} \approx \frac{\sigma_F}{\sqrt{N}}$$
 

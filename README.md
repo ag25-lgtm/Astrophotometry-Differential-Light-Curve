@@ -154,7 +154,7 @@ Bins containing fewer than 3 data points were discarded to avoid unreliable mean
 
 **Tools used**
 
-Python, pandas, Lightkurve, NumPy, Matplotlib
+Python, pandas, Lightkurve, NumPy, Matplotlib, SciPy
 
 **Data**
 HJD_bjd_tdb_new2.csv

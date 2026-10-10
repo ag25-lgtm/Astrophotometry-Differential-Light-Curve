@@ -1,5 +1,5 @@
 # Astrophotometry - Differential Light Curve
-[View the notebook](Finalised_Pipeline.ipynb)
+[View the notebook](Complete_Pipeline.ipynb)
 
 ## Overview
 The chosen object for observation was the variable star V1045 Ori in the constellation of Orion, it has a a period of variability of ~1.5 days.
